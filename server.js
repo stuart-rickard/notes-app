@@ -1,4 +1,5 @@
 const express = require( 'express' );
+const path = require( 'path' );
 
 const { addNewNote } = require( './lib/db-calls' );
 
@@ -31,15 +32,15 @@ app.get('/api/notes', (req, res) => {
 app.get('/notes', (req, res) => {
   console.log( 'inside get /notes' );
   // console.log( req );
-  // res.sendFile(path.join(__dirname, './public/notes.html'));
-  res.sendFile('/Users/stuar/Documents/miniature-eureka/public/notes.html');
+  res.sendFile(path.join(__dirname, 'public/notes.html'));
+  // res.sendFile('/Users/stuar/Documents/miniature-eureka/public/notes.html');
 });
 
 app.post('/api/notes', (req, res) => {
   console.log( 'inside /notes post' );
   console.log( req.body );
-  addNewNote( req.body );
-  res.send( 'yes you are talking with /api/notes post route' )
+  // addNewNote( req.body );
+  res.send( addNewNote( req.body ) )
 })
 
 app.get('/', (req, res) => {
