@@ -1,7 +1,7 @@
 const express = require( 'express' );
 const path = require( 'path' );
 
-const { addNewNote } = require( './lib/db-calls' );
+const { addNewNote, removeById } = require( './lib/db-calls' );
 
 const PORT = process.env.PORT || 3002;
 const app = express();
@@ -9,6 +9,7 @@ const app = express();
 // const htmlRoutes = require('./routes/htmlRoutes');
 
 const notes = require( './db/db.json' );
+const { json } = require('express/lib/response');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -43,20 +44,26 @@ app.post('/api/notes', (req, res) => {
   res.send( addNewNote( req.body ) )
 })
 
+app.delete('/api/notes/*', (req, res) => {
+  console.log( 'inside /notes delete' );
+  console.log(Object.values( req.params )[0]);
+
+  res.send( removeById( Object.values( req.params )[ 0 ] ) )
+  // res.send( 'inside delete ' );
+})
+
 app.get('/', (req, res) => {
   console.log( 'test /' );
   console.log( req );
-  res.sendFile(path.join(__dirname, './public/index.html'));
+  res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
 app.get('*', (req, res) => {
   console.log( 'test *' );
   // console.log( req );
-  res.sendFile(path.join(__dirname, './public/index.html'));
+  res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
 app.listen(PORT, () => {
   console.log(`API server is listening on port ${PORT}.`);
 });
-
-console.log('dir name is: ' + __dirname);

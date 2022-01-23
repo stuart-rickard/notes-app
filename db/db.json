@@ -1,10 +1,5 @@
 [
   {
-    "title": "first note",
-    "text": "please save me",
-    "id": "d9374228-9e06-43b9-bcb8-031b046c98b1"
-  },
-  {
     "title": "second note",
     "text": "hello im second\n\nstill second!",
     "id": "825f4c3e-10bd-49d6-83dd-4c1b33e2a28c"
@@ -18,11 +13,6 @@
     "title": "4",
     "text": "4",
     "id": "0418d2dc-131b-4a18-bc58-78020fda34d7"
-  },
-  {
-    "title": "5",
-    "text": "fitht \nljlkjlk",
-    "id": "c9512f5b-0fa7-474e-84aa-1538b653e3a1"
   },
   {
     "title": "6",
@@ -43,5 +33,20 @@
     "title": "lkj;j; clarence",
     "text": "lkjlkjl",
     "id": "9a2dc6a6-66fe-44ba-b1fa-d4cf6c52d6e8"
+  },
+  {
+    "title": "x note",
+    "text": "note x",
+    "id": "983536f9-8dfb-4ddd-8d08-f3429bb07c14"
+  },
+  {
+    "title": "x note",
+    "text": "note x",
+    "id": "fdb4da25-0818-4cb2-a060-e79126104bc9"
+  },
+  {
+    "title": "x note",
+    "text": "note x",
+    "id": "41d2e56d-cf81-4edc-bcc7-a9feffd12c38"
   }
 ]
