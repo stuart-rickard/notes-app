@@ -8,7 +8,9 @@ const app = express();
 // const apiRoutes = require('./routes/apiRoutes');
 // const htmlRoutes = require('./routes/htmlRoutes');
 
-const notes = require( './db/db.json' );
+const storedNotes = require( './db/db.json' );
+let notes = [ ...storedNotes ];
+
 const { json } = require('express/lib/response');
 
 app.use(express.urlencoded({ extended: true }));
@@ -48,7 +50,7 @@ app.delete('/api/notes/*', (req, res) => {
   console.log( 'inside /notes delete' );
   console.log(Object.values( req.params )[0]);
 
-  res.send( removeById( Object.values( req.params )[ 0 ] ) )
+  res.send( removeById( Object.values( req.params )[ 0 ] ) );
   // res.send( 'inside delete ' );
 })
 
